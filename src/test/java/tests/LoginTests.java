@@ -16,6 +16,8 @@ import java.util.NoSuchElementException;
 
 public class LoginTests extends TestUtil {
 
+    private String currentUrl;
+    private String productsPageUrl = "https://www.saucedemo.com/inventory.html";
 
 
     @DataProvider(name = "csvCredentials")
@@ -34,16 +36,16 @@ public class LoginTests extends TestUtil {
         LoginPage loginPage = new LoginPage(driver);
         ProductsPage productsPage = loginPage.login(username, password);
 
-        String currentUrl = driver.getCurrentUrl();
+        currentUrl = driver.getCurrentUrl();
 
         FluentWait fluentWait = new FluentWait<>(driver)
                 .withTimeout(Duration.ofSeconds(5))
                 .pollingEvery(Duration.ofSeconds(1))
                 .ignoreAll(Collections.singleton(NoSuchElementException.class));
 
-        fluentWait.until(ExpectedConditions.urlToBe(currentUrl));
+        fluentWait.until(ExpectedConditions.urlToBe(productsPageUrl));
 
-        Assert.assertTrue(currentUrl.equals("https://www.saucedemo.com/inventory.html"));
+        Assert.assertTrue(currentUrl.equals(productsPageUrl));
     }
 
     @Test(dataProvider =  "csvWrongCredentials")

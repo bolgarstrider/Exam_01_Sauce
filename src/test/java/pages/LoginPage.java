@@ -33,6 +33,8 @@ public class LoginPage {
         passwordInput.clear();
         passwordInput.sendKeys(password);
         loginButton.click();
+
+//        return new ProductsPage(driver);
     }
 
     public ProductsPage login(String username, String password) {
