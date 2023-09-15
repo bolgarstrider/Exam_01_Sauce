@@ -22,12 +22,12 @@ public class LoginTests extends TestUtil {
 
     @DataProvider(name = "csvCredentials")
     public static Object[][] readCredentialsFromCsvFile() throws IOException, CsvException {
-        return CSVHelper.readCsvFile("src/test/resources/credentials.csv");
+        return CSVHelper.readCsvFileTwoDimensional("src/test/resources/credentials.csv");
     }
 
     @DataProvider(name = "csvWrongCredentials")
     public static Object[][] readWrongCredentialsFromCsvFile() throws IOException, CsvException {
-        return CSVHelper.readCsvFile("src/test/resources/WrongCredentials.csv");
+        return CSVHelper.readCsvFileTwoDimensional("src/test/resources/WrongCredentials.csv");
     }
 
 
