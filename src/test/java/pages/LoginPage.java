@@ -20,7 +20,7 @@ public class LoginPage {
     @FindBy(xpath = "//button[@class='error-button']")
     private WebElement errorMsg;
 
-    public LoginPage(WebDriver driver){
+    public LoginPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
@@ -42,15 +42,13 @@ public class LoginPage {
         return new ProductsPage(driver);
     }
 
-    public boolean isErrorMsgDisplayed(){
+    public boolean isErrorMsgDisplayed() {
         if (errorMsg.isDisplayed()) {
             return true;
         } else {
             return false;
         }
     }
-
-
 
 
 }

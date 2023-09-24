@@ -1,6 +1,4 @@
 package pages;
-
-import net.bytebuddy.implementation.bytecode.Throw;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -16,6 +14,9 @@ public class ProductsPage {
 
     @FindBy(xpath = "//span[@class='shopping_cart_badge']")
     private WebElement shoppingCartBadge;
+
+    @FindBy(xpath = "//a[@class='shopping_cart_link']")
+    private WebElement shoppingCart;
 
 
     public ProductsPage(WebDriver driver) {
@@ -40,11 +41,6 @@ public class ProductsPage {
     }
 
     public int getNumberOfItemsInTheCart() {
-//            if (shoppingCartBadge.isDisplayed()) {
-//                return Integer.parseInt(shoppingCartBadge.getText());
-//            } else {
-//                return 0;
-//            }
 
         try {
             return Integer.parseInt(shoppingCartBadge.getText());
@@ -53,6 +49,11 @@ public class ProductsPage {
         }
 
 
+    }
+
+    public ShoppingCartPage checkShoppingCart() {
+        shoppingCart.click();
+        return new ShoppingCartPage(driver);
     }
 
 }

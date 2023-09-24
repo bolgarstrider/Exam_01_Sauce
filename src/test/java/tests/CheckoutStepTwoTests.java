@@ -1,17 +1,14 @@
 package tests;
 
 import base.TestUtil;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.LoginPage;
-import pages.ProductsPage;
-import pages.ShoppingCartPage;
+import pages.*;
 
-public class ShoppingCartTests extends TestUtil {
+public class CheckoutStepTwoTests extends TestUtil {
 
     @Test
-    public void checkOut(){
+    public void checkOutStepTwo() {
         LoginPage loginPage = new LoginPage(driver);
         ProductsPage productsPage = loginPage.login("standard_user", "secret_sauce");
 
@@ -19,8 +16,12 @@ public class ShoppingCartTests extends TestUtil {
         productsPage.addItemToCart("sauce-labs-fleece-jacket");
         ShoppingCartPage shoppingCartPage = productsPage.checkShoppingCart();
 
-        shoppingCartPage.checkOut();
+        CheckoutStepOnePage checkoutStepOnePage = shoppingCartPage.checkOut();
 
-        Assert.assertEquals(driver.getCurrentUrl(), "https://www.saucedemo.com/checkout-step-one.html");
+        CheckoutPageTwoPage checkoutPageTwoPage = checkoutStepOnePage.StepOneContinue("John", "Black", "1000");
+
+        CheckoutCompletePage checkoutCompletePage = checkoutPageTwoPage.FinishShopping();
+
+        Assert.assertTrue(checkoutCompletePage.isPonyDisplayed());
     }
 }
