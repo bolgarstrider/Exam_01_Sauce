@@ -62,4 +62,14 @@ public class ProductsTests extends TestUtil {
     }
 
 
+    //problem user add specific item test
+    @Test
+    public void problemUserTest1() {
+        LoginPage loginPage = new LoginPage(driver);
+        ProductsPage productsPage = loginPage.login("problem_user", "secret_sauce");
+        productsPage.addItemToCart("sauce-labs-fleece-jacket");
+        Assert.assertEquals(productsPage.getNumberOfItemsInTheCart(), 1);
+    }
+
+
 }

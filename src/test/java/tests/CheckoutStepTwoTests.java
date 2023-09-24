@@ -20,9 +20,9 @@ public class CheckoutStepTwoTests extends TestUtil {
 
         CheckoutStepOnePage checkoutStepOnePage = shoppingCartPage.checkOut();
 
-        CheckoutPageTwoPage checkoutPageTwoPage = checkoutStepOnePage.StepOneContinue("John", "Black", "1000");
+        checkoutPageTwoPage checkoutPageTwoPage = checkoutStepOnePage.stepOneContinue("John", "Black", "1000");
 
-        CheckoutCompletePage checkoutCompletePage = checkoutPageTwoPage.FinishShopping();
+        checkoutCompletePage checkoutCompletePage = checkoutPageTwoPage.FinishShopping();
 
         Assert.assertTrue(checkoutCompletePage.isPonyDisplayed());
     }

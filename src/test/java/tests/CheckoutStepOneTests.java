@@ -23,7 +23,7 @@ public class CheckoutStepOneTests extends TestUtil {
 
       CheckoutStepOnePage checkoutStepOnePage = shoppingCartPage.checkOut();
 
-      checkoutStepOnePage.StepOneContinue("John", "Black", "1000");
+      checkoutStepOnePage.stepOneContinue("John", "Black", "1000");
 
       Assert.assertEquals(driver.getCurrentUrl(), "https://www.saucedemo.com/checkout-step-two.html");
 

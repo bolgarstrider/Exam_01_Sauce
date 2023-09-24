@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite thread-count="3" name="A_Framework_Saucedemo"
+       annotations="JDK" parallel="tests">
+    <test name="Products Tests">
+        <classes>
+            <class name="tests.ProductsTests"/>
+        </classes>
+    </test> <!-- Test -->
+
+    <test name="Shopping Cart Tests">
+        <classes>
+            <class name="tests.ShoppingCartTests"/>
+        </classes>
+
+    </test> <!-- Test -->
+
+    <test name="Complete Order Test">
+        <classes>
+            <class name="tests.CheckoutStepTwoTests"/>
+        </classes>
+    </test>
+
+
+
+</suite> <!-- Suite -->
