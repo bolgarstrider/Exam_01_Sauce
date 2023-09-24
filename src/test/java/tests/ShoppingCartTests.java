@@ -10,6 +10,7 @@ import pages.ShoppingCartPage;
 
 public class ShoppingCartTests extends TestUtil {
 
+    //log in, add products, see shopping cart and start checkout
     @Test
     public void checkOut(){
         LoginPage loginPage = new LoginPage(driver);

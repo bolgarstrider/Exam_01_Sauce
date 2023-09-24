@@ -31,6 +31,7 @@ public class LoginTests extends TestUtil {
     }
 
 
+    //test with correct credentials
     @Test(dataProvider = "csvCredentials")
     public void successfulLogin(String username, String password){
         LoginPage loginPage = new LoginPage(driver);
@@ -48,6 +49,7 @@ public class LoginTests extends TestUtil {
         Assert.assertTrue(currentUrl.equals(productsPageUrl));
     }
 
+    //test with invalid credentials
     @Test(dataProvider =  "csvWrongCredentials")
     public void unsuccessfulLogin(String username, String password){
         LoginPage loginPage = new LoginPage(driver);

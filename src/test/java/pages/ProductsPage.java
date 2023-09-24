@@ -24,12 +24,15 @@ public class ProductsPage {
         PageFactory.initElements(driver, this);
     }
 
+
+    //add an item to the shopping cart
     public void addItemToCart(String itemName) {
         String itemXpath = String.format(ADD_TO_CART, itemName);
         WebElement addToCartButton = driver.findElement(By.xpath(itemXpath));
         addToCartButton.click();
     }
 
+    // remove an item to the shopping cart
     public void removeItemFromCart(String itemName) {
         String itemXpath = String.format(REMOVE_FROM_CART, itemName);
         WebElement removeFromCartButton = driver.findElement(By.xpath(itemXpath));
@@ -40,6 +43,7 @@ public class ProductsPage {
         }
     }
 
+    //get the number of items in the cart
     public int getNumberOfItemsInTheCart() {
 
         try {
@@ -51,6 +55,7 @@ public class ProductsPage {
 
     }
 
+    //go to shopping cart page
     public ShoppingCartPage checkShoppingCart() {
         shoppingCart.click();
         return new ShoppingCartPage(driver);

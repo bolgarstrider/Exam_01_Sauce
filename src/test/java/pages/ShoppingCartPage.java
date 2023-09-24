@@ -17,6 +17,7 @@ public class ShoppingCartPage {
         PageFactory.initElements(driver, this);
     }
 
+    //continue to first step of check out
     public CheckoutStepOnePage checkOut() {
         checkOutButton.click();
         return new CheckoutStepOnePage(driver);

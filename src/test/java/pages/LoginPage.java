@@ -25,6 +25,7 @@ public class LoginPage {
         PageFactory.initElements(driver, this);
     }
 
+    //Try to log in with user credentials
     public void tryToLogin(String username, String password) {
         userNameInput.click();
         userNameInput.clear();
@@ -33,10 +34,9 @@ public class LoginPage {
         passwordInput.clear();
         passwordInput.sendKeys(password);
         loginButton.click();
-
-//        return new ProductsPage(driver);
     }
 
+    //Login and continue to next page
     public ProductsPage login(String username, String password) {
         tryToLogin(username, password);
         return new ProductsPage(driver);

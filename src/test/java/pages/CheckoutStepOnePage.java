@@ -24,6 +24,7 @@ public class CheckoutStepOnePage {
         PageFactory.initElements(driver, this);
     }
 
+    //enter user data and continue to second part of check out
 public CheckoutPageTwoPage StepOneContinue(String fName, String lName, String pCode) {
         firstName.click();
         firstName.clear();

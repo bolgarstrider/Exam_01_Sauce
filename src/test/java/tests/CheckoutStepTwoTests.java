@@ -7,6 +7,8 @@ import pages.*;
 
 public class CheckoutStepTwoTests extends TestUtil {
 
+
+    //Successfull scenario - log in, add products, complete the checkout process
     @Test
     public void checkOutStepTwo() {
         LoginPage loginPage = new LoginPage(driver);

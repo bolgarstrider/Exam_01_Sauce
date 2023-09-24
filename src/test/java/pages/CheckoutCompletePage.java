@@ -18,7 +18,7 @@ public class CheckoutCompletePage {
         PageFactory.initElements(driver, this);
     }
 
-
+//check if the image for successful order is displayed
     public boolean isPonyDisplayed() {
         try {
             ponyExpress.isDisplayed();

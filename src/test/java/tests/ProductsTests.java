@@ -23,6 +23,7 @@ public class ProductsTests extends TestUtil {
         return CSVHelper.readCsvFile("src/test/resources/productsToRemove.csv");
     }
 
+    //log in and add different products from a csv file
     @Test(dataProvider = "productsToAdd")
     public void addProductToCartTest(String itemName, String empty) {
         LoginPage loginPage = new LoginPage(driver);
@@ -34,6 +35,7 @@ public class ProductsTests extends TestUtil {
 
     }
 
+    //log in, add and remove a product from csv file
     @Test(dataProvider = "productsToRemove")
     public void removeProductFromCartTest(String itemName, String empty) {
         LoginPage loginPage = new LoginPage(driver);
@@ -46,6 +48,7 @@ public class ProductsTests extends TestUtil {
 
     }
 
+    //log in and add several products provided as parameters
     @Test
     public void addSeveralProducts() {
         LoginPage loginPage = new LoginPage(driver);

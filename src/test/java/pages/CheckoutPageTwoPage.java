@@ -17,6 +17,7 @@ public class CheckoutPageTwoPage {
         PageFactory.initElements(driver, this);
     }
 
+    //finish the check out and continue to last page
     public CheckoutCompletePage FinishShopping() {
         finishButton.click();
         return new CheckoutCompletePage(driver);

@@ -11,6 +11,7 @@ import pages.ShoppingCartPage;
 public class CheckoutStepOneTests extends TestUtil {
 
 
+   //login, add products, complete checkout first step
    @Test
    public void checkOut() {
       LoginPage loginPage = new LoginPage(driver);
