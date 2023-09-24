@@ -5,21 +5,21 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class checkoutPageTwoPage {
+public class CheckoutPageTwoPage {
 
     protected WebDriver driver;
 
     @FindBy(xpath = "//button[@name='finish']")
     private WebElement finishButton;
 
-    public checkoutPageTwoPage(WebDriver driver) {
+    public CheckoutPageTwoPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
     //finish the check out and continue to last page
-    public checkoutCompletePage FinishShopping() {
+    public CheckoutCompletePage FinishShopping() {
         finishButton.click();
-        return new checkoutCompletePage(driver);
+        return new CheckoutCompletePage(driver);
     }
 }

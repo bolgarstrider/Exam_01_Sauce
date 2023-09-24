@@ -25,7 +25,7 @@ public class CheckoutStepOnePage {
     }
 
     //enter user data and continue to second part of check out
-public checkoutPageTwoPage stepOneContinue(String fName, String lName, String pCode) {
+public CheckoutPageTwoPage stepOneContinue(String fName, String lName, String pCode) {
         firstName.click();
         firstName.clear();
         firstName.sendKeys(fName);
@@ -38,7 +38,7 @@ public checkoutPageTwoPage stepOneContinue(String fName, String lName, String pC
 
         continueButton.click();
 
-        return new checkoutPageTwoPage(driver);
+        return new CheckoutPageTwoPage(driver);
 }
 
 

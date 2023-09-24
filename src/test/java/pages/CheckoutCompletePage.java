@@ -6,14 +6,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class checkoutCompletePage {
+public class CheckoutCompletePage {
 
     protected WebDriver driver;
 
     @FindBy(xpath = "//img[@class='pony_express']")
     private WebElement ponyExpress;
 
-    public checkoutCompletePage(WebDriver driver) {
+    public CheckoutCompletePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
